@@ -1,31 +1,44 @@
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - recipe
+  - url
+  - creators
+
+slots:
+  name:
+    type: text
+  ingredients:
+    type: list
+  directions:
+    type: list
+  curr_step:
+    type: float
 
 responses:
   utter_greet:
   - text: "Hey! How are you?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_recipe:
+  - text: "Ok, please specify a URL."
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  utter_food:
+  - text: "Mmm, {name}? Sounds delicious!"
+  - text: "Wow, {name}? Sounds tasty!"
+  - text: "Ooh, {name}? Sounds delicious!"
+  - text: "Ooh, {name}? Sounds tasty!"
+  - text: "Woah, {name}? Sounds delicious!"
+  - text: "Woah, {name}? Sounds tasty!"
+  - text: "Uhh, {name}? Sounds OK I guess!"
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_creators:
+  - text: "Faraaz, Brandon, Raymond, Varun"
 
   utter_goodbye:
   - text: "Bye"
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+actions:
+  - action_get_recipe
 
 session_config:
   session_expiration_time: 60
