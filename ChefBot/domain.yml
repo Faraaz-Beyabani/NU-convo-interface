@@ -4,6 +4,8 @@ intents:
   - recipe
   - url
   - creators
+  - navigate
+  - ingredients
 
 slots:
   name:
@@ -22,6 +24,12 @@ responses:
   utter_recipe:
   - text: "Ok, please specify a URL."
 
+  utter_fail:
+  - text: "I don't believe you've given me a recipe to parse. Could you please provide a url to allrecipes.com now?"
+  
+  utter_invalid:
+  - text: "I'm sorry, I don't think I can help you with this recipe. Would you like to try another?"
+
   utter_food:
   - text: "Mmm, {name}? Sounds delicious!"
   - text: "Wow, {name}? Sounds tasty!"
@@ -39,6 +47,8 @@ responses:
 
 actions:
   - action_get_recipe
+  - action_navigate_recipe
+  - action_recipe_ingredients
 
 session_config:
   session_expiration_time: 60
