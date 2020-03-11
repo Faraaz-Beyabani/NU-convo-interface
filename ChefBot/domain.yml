@@ -24,20 +24,20 @@ responses:
   utter_recipe:
   - text: "Ok, please specify a URL."
 
-  utter_fail:
+  utter_get_fail:
   - text: "I don't believe you've given me a recipe to parse. Could you please provide a url to allrecipes.com now?"
   
   utter_invalid:
   - text: "I'm sorry, I don't think I can help you with this recipe. Would you like to try another?"
 
   utter_food:
-  - text: "Mmm, {name}? Sounds delicious!"
-  - text: "Wow, {name}? Sounds tasty!"
-  - text: "Ooh, {name}? Sounds delicious!"
-  - text: "Ooh, {name}? Sounds tasty!"
-  - text: "Woah, {name}? Sounds delicious!"
-  - text: "Woah, {name}? Sounds tasty!"
-  - text: "Uhh, {name}? Sounds OK I guess!"
+  - text: "Mmm, {name}? Sounds delicious! Would you like me to tell you the ingredients or read a step?"
+  - text: "Wow, {name}? Sounds tasty! Would you like me to tell you the ingredients or read a step?"
+  - text: "Ooh, {name}? Sounds delicious! Would you like me to tell you the ingredients or read a step?"
+  - text: "Ooh, {name}? Sounds tasty! Would you like me to tell you the ingredients or read a step?"
+  - text: "Woah, {name}? Sounds delicious! Would you like me to tell you the ingredients or read a step?"
+  - text: "Woah, {name}? Sounds tasty! Would you like me to tell you the ingredients or read a step?"
+  - text: "Uhh, {name}? Sounds OK I guess! Would you like me to tell you the ingredients or read a step?"
 
   utter_creators:
   - text: "Faraaz, Brandon, Raymond, Varun"

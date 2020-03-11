@@ -12,18 +12,25 @@
 - walk me through a recipe
 - i want to try a recipe
 - could you help me with a recipe?
+- i need help with a recipe
 
 ## intent:navigate
 - read me the first step
 - read me the next step
 - what is the next step?
 - what is the first step?
+- tell me the last step
 - what comes after that?
+- what comes before that?
+- tell me the 1st step?
+- what is the 2nd step?
+- what is the 3rd step?
 
 ## intent:ingredients
 - could you give me the ingredients?
 - what are the ingredients?
 - give me the ingredients
+- tell me the ingredients
 
 ## intent:url
 - https://www.allrecipes.com/recipe/
@@ -37,3 +44,4 @@
 - goodbye
 - see you around
 - see you later
+- good night
