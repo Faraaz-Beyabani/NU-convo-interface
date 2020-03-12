@@ -32,6 +32,24 @@
 - give me the ingredients
 - tell me the ingredients
 
+## intent:how
+- how do i do that?
+- can you tell me how to do that?
+- i need an explanation on how to do that
+- i don't know how to do that
+
+## intent:with
+- i don't know what to do that with
+- what do i use to do that?
+- what do i need for that?
+- can you tell me what i need for that?
+
+## intent:instead
+- what can i use instead of that?
+- what can i substitute for that?
+- i don't have that, can i use something else?
+- can you tell me what i can use besides that?
+
 ## intent:url
 - https://www.allrecipes.com/recipe/
 

@@ -6,6 +6,9 @@ intents:
   - creators
   - navigate
   - ingredients
+  - how
+  - with
+  - instead
 
 slots:
   name:
@@ -46,9 +49,12 @@ responses:
   - text: "Bye"
 
 actions:
-  - action_get_recipe
-  - action_navigate_recipe
+  - action_recipe_get
+  - action_recipe_navigate
   - action_recipe_ingredients
+  - action_recipe_how
+  - action_recipe_with
+  - action_recipe_instead
 
 session_config:
   session_expiration_time: 60

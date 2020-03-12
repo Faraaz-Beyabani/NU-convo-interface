@@ -56,10 +56,10 @@ def scrape_directions(recipe):
     dir_list = recipe.find('ol', class_='recipe-directions__list').find_all('li')
     return [d.span.text.strip() for d in dir_list]
 
-class ActionGetRecipe(Action):
+class ActionRecipeGet(Action):
 
     def name(self) -> Text:
-        return "action_get_recipe"
+        return "action_recipe_get"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -76,10 +76,10 @@ class ActionGetRecipe(Action):
         return [SlotSet("name", name), SlotSet("ingredients", ingredients), 
                 SlotSet("directions", directions), SlotSet("curr_step", -1)]
 
-class ActionNavigateRecipe(Action):
+class ActionRecipeNavigate(Action):
 
     def name(self) -> Text:
-        return "action_navigate_recipe"
+        return "action_recipe_navigate"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -139,7 +139,6 @@ class ActionNavigateRecipe(Action):
             dispatcher.utter_message(steps[curr_step])
             return [SlotSet("curr_step", curr_step)] 
 
-
 class ActionRecipeIngredients(Action):
 
     def name(self) -> Text:
@@ -157,3 +156,32 @@ class ActionRecipeIngredients(Action):
         for i in tracker.get_slot('ingredients'):
             dispatcher.utter_message(i)
 
+class ActionRecipeHow(Action):
+    def name(self) -> Text:
+        return "action_recipe_how"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        dispatcher.utter_message("TODO: Implement ActionRecipeHow in actions.py")
+
+class ActionRecipeWith(Action):
+    def name(self) -> Text:
+        return "action_recipe_with"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        dispatcher.utter_message("TODO: Implement ActionRecipeWith in actions.py")
+
+class ActionRecipeInstead(Action):
+    def name(self) -> Text:
+        return "action_recipe_instead"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        dispatcher.utter_message("TODO: Implement ActionRecipeInstead in actions.py")

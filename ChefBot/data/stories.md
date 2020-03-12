@@ -2,16 +2,28 @@
 * recipe
   - utter_recipe
 * url
-  - action_get_recipe
+  - action_recipe_get
   - utter_food
 
 ## no recipe path
 * navigate
-  - action_navigate_recipe
+  - action_recipe_navigate
 
 ## no ingredients path
 * ingredients
   - action_recipe_ingredients
+
+## how path
+* how
+  - action_recipe_how
+
+## with path
+* with
+  - action_recipe_with
+
+## instead path
+* instead
+  - action_recipe_instead
 
 ## creator path
 * creators
