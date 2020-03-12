@@ -13,17 +13,9 @@
 * ingredients
   - action_recipe_ingredients
 
-## how path
-* how
-  - action_recipe_how
-
-## with path
-* with
-  - action_recipe_with
-
-## instead path
-* instead
-  - action_recipe_instead
+## help path
+* help
+  - action_recipe_help
 
 ## creator path
 * creators
@@ -32,6 +24,10 @@
 ## hello path
 * greet
   - utter_greet
+
+## thanks path
+* thanks
+  - utter_welcome
 
 ## say goodbye
 * goodbye

@@ -6,9 +6,8 @@ intents:
   - creators
   - navigate
   - ingredients
-  - how
-  - with
-  - instead
+  - help
+  - thanks
 
 slots:
   name:
@@ -22,7 +21,8 @@ slots:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey! How are you? My name is Raymundo."
+  - text: "Hey! How are you? I'm Raymundo."
 
   utter_recipe:
   - text: "Ok, please specify a URL."
@@ -42,6 +42,9 @@ responses:
   - text: "Woah, {name}? Sounds tasty! Would you like me to tell you the ingredients or read a step?"
   - text: "Uhh, {name}? Sounds OK I guess! Would you like me to tell you the ingredients or read a step?"
 
+  utter_welcome:
+  - text: "You're very welcome! Let me know if I can help you with anything else."
+
   utter_creators:
   - text: "Faraaz, Brandon, Raymond, Varun"
 
@@ -52,9 +55,7 @@ actions:
   - action_recipe_get
   - action_recipe_navigate
   - action_recipe_ingredients
-  - action_recipe_how
-  - action_recipe_with
-  - action_recipe_instead
+  - action_recipe_help
 
 session_config:
   session_expiration_time: 60

@@ -4,9 +4,6 @@
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/core/actions/#custom-actions/
 
-
-# This is a simple example for a custom action which utters "Hello World!"
-
 import re
 import random
 import requests
@@ -85,7 +82,7 @@ class ActionRecipeNavigate(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        if not tracker.get_slot('directions'):
+        if not tracker.get_slot('name'):
             dispatcher.utter_message(template='utter_fail')
             return
 
@@ -103,7 +100,7 @@ class ActionRecipeNavigate(Action):
                 dispatcher.utter_message(steps[int(num)-1])
                 return [SlotSet("curr_step", int(num)-1)] 
             except:
-                dispatcher.utter_message(f"I couldn't find the {search} step. Sorry.")
+                dispatcher.utter_message(f"I couldn't find the {cardinal} step. Sorry.")
         elif any(w in message for w in word_cardinals.keys()):
             for w in word_cardinals:
                 if w in message:
@@ -148,7 +145,7 @@ class ActionRecipeIngredients(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        if not tracker.get_slot('ingredients'):
+        if not tracker.get_slot('name'):
             dispatcher.utter_message(template='utter_fail')
             return
 
@@ -156,32 +153,25 @@ class ActionRecipeIngredients(Action):
         for i in tracker.get_slot('ingredients'):
             dispatcher.utter_message(i)
 
-class ActionRecipeHow(Action):
+class ActionRecipeHelp(Action):
     def name(self) -> Text:
-        return "action_recipe_how"
+        return "action_recipe_help"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        dispatcher.utter_message("TODO: Implement ActionRecipeHow in actions.py")
 
-class ActionRecipeWith(Action):
-    def name(self) -> Text:
-        return "action_recipe_with"
+        if not tracker.get_slot('name'):
+            dispatcher.utter_message(template='utter_fail')
+            return
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        dispatcher.utter_message("TODO: Implement ActionRecipeWith in actions.py")
+        message = tracker.latest_message['text']
 
-class ActionRecipeInstead(Action):
-    def name(self) -> Text:
-        return "action_recipe_instead"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        dispatcher.utter_message("TODO: Implement ActionRecipeInstead in actions.py")
+        if ' how ' in message:
+            dispatcher.utter_message("I think this might help you:")
+            dispatcher.utter_message(f"https://www.youtube.com/results?search_query={message.replace(' ', '+')}")
+            dispatcher.utter_message("Let me know when you would like to move on.")
+        elif ' what ' in message: 
+            dispatcher.utter_message("I think this might help you:")
+            dispatcher.utter_message(f"https://www.google.com/search?hl=en&q={message.replace(' ', '+')}")
+            dispatcher.utter_message("Let me know when you would like to move on.")
