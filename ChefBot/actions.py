@@ -95,7 +95,7 @@ class ActionRecipeNavigate(Action):
 
         if search:
             cardinal = search.group()
-            num = cardinal[0]
+            num = cardinal[:-2]
             try:
                 dispatcher.utter_message(steps[int(num)-1])
                 return [SlotSet("curr_step", int(num)-1)] 
