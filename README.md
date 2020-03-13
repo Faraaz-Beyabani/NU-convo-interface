@@ -1,4 +1,4 @@
-# Golden Globes 2020 Natural Language Processing
+# Rasa Cooking Assistant Conversational Interface
 
 Group Members: Faraaz Beyabani, Varun Ganglani, Raymond Liu, Brandon Lieuw
 
@@ -9,13 +9,14 @@ If not on Windows, please create and activate a virtual environment (typically t
 
 `pip install -r requirements.txt`
 
-Make sure that all relevant and necessary JSON files are located in the same folder as gg_parser.py.
+In order to correctly run the robot on your local machine, please run these two commands in separate terminals in the ChefBot directory:
 
-Running autograder.py will sequentially print the host(s), awards, and then the winner, presenters, and nominees for each award, followed by the best dressed and worst dressed for the whole event.
+`rasa run actions`
 
-Alternatively, gg_parser.py can be run from the command line with a year argument for the same results.
+`rasa shell`
 
-After the file has been run, either in isolation or through the autograder, it will create and dump a human readable version of the results in the same folder as gg_parser.py.
-This file is named 'human_readable{year}.txt'.
+This will allow you to interact with the bot in the terminal in which `rasa shell` was run.
 
-Repository: https://github.com/Faraaz-Beyabani/NU-golden-globes-nlp
+The bot is able to take in recipes, recite ingredients, recite steps one at a time, navigate steps locally (next, previous) or absolutely (1st, 2nd, 3rd). It can also give assistance by linking to Google or YouTube when asked "what is" and "how to" questions, respectively.
+
+Repository: https://github.com/Faraaz-Beyabani/NU-convo-interface/
