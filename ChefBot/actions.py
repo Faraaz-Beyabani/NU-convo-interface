@@ -51,6 +51,7 @@ def verify_ingredients(ingredient):
 
 def scrape_directions(recipe):
     dir_list = recipe.find('ol', class_='recipe-directions__list').find_all('li')
+    
     return [d.span.text.strip() for d in dir_list]
 
 class ActionRecipeGet(Action):
